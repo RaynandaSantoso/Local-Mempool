@@ -14,7 +14,10 @@ port = os.getenv("RPC_PORT")
 url = f"http://{host}:{port}"
 
 
-def rpc(method, params= []):
+def rpc(method, params=None):
+    if params == None:
+        params = []
+        
     payload = {
         "jsonrpc": "1.0",
         "method": method, 
